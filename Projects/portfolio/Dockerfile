@@ -6,7 +6,7 @@ WORKDIR /usr/app
 
 COPY ./ /usr/app
 
-RUN npm install -g serve
+RUN ["npm", "install", "-g" ,"serve"]
 
 EXPOSE 3000
 
