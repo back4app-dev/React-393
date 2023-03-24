@@ -1,13 +1,13 @@
-FROM node:alpine
+FROM node:latest
 
-WORKDIR /app
+RUN mkdir /usr/app
 
-COPY ./package.json /app
+WORKDIR /usr/app
 
-RUN npm install
+COPY . /usr/app
 
-COPY . /app
+RUN npm install -g serve
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD serve -s dist
